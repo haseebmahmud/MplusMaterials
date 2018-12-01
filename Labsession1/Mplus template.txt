@@ -1,0 +1,15 @@
+﻿title: Read data <filename>.dat into Mplus
+Check for correct data input
+
+data: FILE IS ess3at.dat;
+!listwise = on ;
+
+variable: names = ipmodst imptrad ipfrule ipbhprp ipeqopt ipudrst impenv imsmetn imdfetn impcntr ;
+missing = ipmodst imptrad ipfrule ipbhprp ipeqopt ipudrst impenv (7-9) imsmetn imdfetn impcntr (6-9);
+
+analysis: type = basic;
+
+model:
+
+output: Sampstat;
+

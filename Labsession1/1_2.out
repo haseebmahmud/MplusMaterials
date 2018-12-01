@@ -1,0 +1,339 @@
+Mplus VERSION 7 (Mac)
+MUTHEN & MUTHEN
+08/10/2015   6:13 PM
+
+INPUT INSTRUCTIONS
+
+  title: Read data <filename>.dat into Mplus
+  Check for correct data input
+
+  data: FILE = ess3at.dat;
+  ! Same directory data and input file
+  ! I am not
+  !listwise = on ;
+
+
+  variable: names = ipmodst imptrad ipfrule ipbhprp ipeqopt ipudrst
+  impenv imsmetn imdfetn impcntr;
+  ! Defining missing value
+  missing = ipmodst imptrad ipfrule ipbhprp ipeqopt
+  ipudrst impenv(7-9) imsmetn imdfetn impcntr (6-9);
+  ! only 90 characters are possible
+  categorical = imsmetn imdfetn impcntr;
+  analysis: type = basic;
+
+  model:
+
+  output: Sampstat;
+
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  2
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Read data <filename>.dat into Mplus
+Check for correct data input
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        2402
+
+Number of dependent variables                                   10
+Number of independent variables                                  0
+Number of continuous latent variables                            0
+
+Observed dependent variables
+
+  Continuous
+   IPMODST     IMPTRAD     IPFRULE     IPBHPRP     IPEQOPT     IPUDRST
+   IMPENV
+
+  Binary and ordered categorical (ordinal)
+   IMSMETN     IMDFETN     IMPCNTR
+
+
+Estimator                                                    WLSMV
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+Parameterization                                             DELTA
+
+Input data file(s)
+  ess3at.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            66
+
+
+SUMMARY OF MISSING DATA PATTERNS
+
+
+     MISSING DATA PATTERNS (x = not missing)
+
+           1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20
+ IPMODST   x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ IMPTRAD   x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ IPFRULE   x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ IPBHPRP   x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ IPEQOPT   x  x  x  x  x  x  x  x  x  x  x              x  x  x  x  x
+ IPUDRST   x  x  x  x  x  x  x  x           x  x        x  x  x  x
+ IMPENV    x  x  x  x  x  x  x     x  x  x  x  x  x     x  x  x     x
+ IMSMETN   x  x  x  x           x  x        x     x  x  x  x     x
+ IMDFETN   x  x        x        x  x        x  x  x  x  x        x
+ IMPCNTR   x     x     x  x     x  x  x     x  x  x  x  x        x
+
+          21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40
+ IPMODST   x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ IMPTRAD   x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x  x
+ IPFRULE   x  x  x  x
+ IPBHPRP               x  x  x  x  x  x  x  x  x  x  x  x
+ IPEQOPT               x  x  x  x  x  x  x  x              x  x
+ IPUDRST   x  x  x     x  x  x  x  x           x           x     x
+ IMPENV    x  x     x  x  x  x  x  x  x  x  x  x  x  x     x  x  x
+ IMSMETN   x     x     x  x           x  x     x  x  x     x  x  x  x
+ IMDFETN   x     x     x     x        x  x  x  x  x  x  x  x  x  x  x
+ IMPCNTR   x     x     x  x  x  x     x        x  x     x  x  x  x
+
+          41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60
+ IPMODST   x  x  x  x  x  x  x  x  x
+ IMPTRAD                              x  x  x  x  x  x  x  x  x  x
+ IPFRULE   x  x  x  x  x  x           x  x  x  x  x                 x
+ IPBHPRP   x  x  x           x  x  x  x  x  x  x  x  x  x  x
+ IPEQOPT   x  x  x  x  x     x  x     x  x  x  x     x  x     x  x  x
+ IPUDRST   x  x  x  x  x  x           x  x  x     x  x     x  x     x
+ IMPENV    x  x     x        x        x  x     x  x  x  x  x  x  x
+ IMSMETN   x  x  x  x  x  x  x  x  x  x  x  x     x  x  x  x  x  x
+ IMDFETN   x  x  x  x  x  x  x  x  x  x  x  x     x  x  x  x  x  x
+ IMPCNTR   x     x  x  x  x  x  x  x  x     x     x  x  x     x  x
+
+          61 62 63 64 65 66
+ IPMODST
+ IMPTRAD
+ IPFRULE
+ IPBHPRP   x
+ IPEQOPT      x
+ IPUDRST         x
+ IMPENV
+ IMSMETN   x  x     x  x
+ IMDFETN   x  x     x  x
+ IMPCNTR   x  x     x     x
+
+
+     MISSING DATA PATTERN FREQUENCIES
+
+    Pattern   Frequency     Pattern   Frequency     Pattern   Frequency
+          1        2071          23           1          45           5
+          2          32          24           1          46           1
+          3           5          25          30          47           1
+          4           7          26           1          48           1
+          5          16          27           1          49           1
+          6           2          28           1          50           6
+          7          80          29           4          51           2
+          8           6          30           2          52           1
+          9          18          31           1          53           1
+         10           1          32           1          54           3
+         11           1          33           2          55           1
+         12           9          34           1          56           2
+         13           1          35           1          57           1
+         14           2          36           1          58           2
+         15           1          37           4          59           1
+         16          22          38           1          60           1
+         17           2          39           1          61           1
+         18           2          40           1          62           1
+         19           3          41           4          63           1
+         20           1          42           1          64          18
+         21           2          43           2          65           1
+         22           1          44           2          66           1
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        0.982
+ IMPTRAD        0.974         0.983
+ IPFRULE        0.958         0.958         0.964
+ IPBHPRP        0.961         0.964         0.946         0.968
+ IPEQOPT        0.970         0.970         0.955         0.958         0.978
+ IPUDRST        0.966         0.967         0.953         0.953         0.964
+ IMPENV         0.972         0.977         0.955         0.963         0.970
+ IMSMETN        0.934         0.935         0.919         0.923         0.931
+ IMDFETN        0.936         0.937         0.920         0.925         0.933
+ IMPCNTR        0.925         0.925         0.909         0.913         0.921
+
+
+           Covariance Coverage
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST        0.974
+ IMPENV         0.965         0.980
+ IMSMETN        0.928         0.933         0.951
+ IMDFETN        0.929         0.934         0.945         0.953
+ IMPCNTR        0.918         0.922         0.930         0.936         0.940
+
+
+UNIVARIATE PROPORTIONS AND COUNTS FOR CATEGORICAL VARIABLES
+
+    IMSMETN
+      Category 1    0.182      416.000
+      Category 2    0.471     1075.000
+      Category 3    0.290      663.000
+      Category 4    0.057      130.000
+    IMDFETN
+      Category 1    0.088      202.000
+      Category 2    0.328      751.000
+      Category 3    0.452     1035.000
+      Category 4    0.131      301.000
+    IMPCNTR
+      Category 1    0.095      215.000
+      Category 2    0.339      766.000
+      Category 3    0.425      961.000
+      Category 4    0.140      317.000
+
+
+
+
+
+RESULTS FOR BASIC ANALYSIS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1         3.263         2.825         3.647         2.892         2.103
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              IPUDRST       IMPENV        IMSMETN$      IMSMETN$      IMSMETN$
+              ________      ________      ________      ________      ________
+      1         2.481         2.228        -0.907         0.393         1.581
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              IMDFETN$      IMDFETN$      IMDFETN$      IMPCNTR$      IMPCNTR$
+              ________      ________      ________      ________      ________
+      1        -1.352        -0.211         1.119        -1.310        -0.166
+
+
+           MEANS/INTERCEPTS/THRESHOLDS
+              IMPCNTR$
+              ________
+      1         1.079
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        1.697
+ IMPTRAD        0.252         1.890
+ IPFRULE        0.174         0.280         1.802
+ IPBHPRP        0.372         0.418         0.350         1.699
+ IPEQOPT        0.144         0.050        -0.001         0.071         1.080
+ IPUDRST        0.170         0.070        -0.007         0.058         0.414
+ IMPENV         0.165         0.207         0.009         0.163         0.355
+ IMSMETN       -0.043        -0.109        -0.206        -0.124         0.194
+ IMDFETN       -0.059        -0.161        -0.195        -0.190         0.240
+ IMPCNTR       -0.017        -0.141        -0.214        -0.183         0.257
+
+
+           CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST        1.190
+ IMPENV         0.385         1.163
+ IMSMETN        0.213         0.184
+ IMDFETN        0.235         0.168         0.812
+ IMPCNTR        0.253         0.195         0.739         0.872
+
+
+     STANDARD ERRORS FOR ESTIMATED SAMPLE STATISTICS
+
+
+           S.E. FOR MEANS/INTERCEPTS/THRESHOLDS
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1         0.027         0.031         0.028         0.029         0.026
+
+
+           S.E. FOR MEANS/INTERCEPTS/THRESHOLDS
+              IPUDRST       IMPENV        IMSMETN$      IMSMETN$      IMSMETN$
+              ________      ________      ________      ________      ________
+      1         0.025         0.027         0.031         0.027         0.042
+
+
+           S.E. FOR MEANS/INTERCEPTS/THRESHOLDS
+              IMDFETN$      IMDFETN$      IMDFETN$      IMPCNTR$      IMPCNTR$
+              ________      ________      ________      ________      ________
+      1         0.037         0.026         0.033         0.036         0.027
+
+
+           S.E. FOR MEANS/INTERCEPTS/THRESHOLDS
+              IMPCNTR$
+              ________
+      1         0.033
+
+
+           S.E. FOR CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        0.062
+ IMPTRAD        0.017         0.071
+ IPFRULE        0.018         0.017         0.067
+ IPBHPRP        0.014         0.013         0.015         0.061
+ IPEQOPT        0.019         0.020         0.020         0.020         0.032
+ IPUDRST        0.018         0.019         0.019         0.019         0.012
+ IMPENV         0.018         0.016         0.020         0.018         0.014
+ IMSMETN        0.022         0.021         0.021         0.021         0.020
+ IMDFETN        0.022         0.020         0.021         0.021         0.020
+ IMPCNTR        0.022         0.021         0.021         0.020         0.020
+
+
+           S.E. FOR CORRELATION MATRIX (WITH VARIANCES ON THE DIAGONAL)
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST        0.037
+ IMPENV         0.014         0.036
+ IMSMETN        0.021         0.021
+ IMDFETN        0.021         0.021         0.006
+ IMPCNTR        0.020         0.021         0.009         0.003
+
+
+     Beginning Time:  18:13:42
+        Ending Time:  18:13:42
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2012 Muthen & Muthen

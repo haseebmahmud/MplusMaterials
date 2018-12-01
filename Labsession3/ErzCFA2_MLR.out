@@ -1,0 +1,583 @@
+Mplus VERSION 7 (Mac)
+MUTHEN & MUTHEN
+08/12/2015  11:10 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE: Educational Styles (20 Items)
+         Confirmatory Factor Model
+         (Empathy and Punishment)
+
+  DATA:     FILE is Erz.dat ;
+            TYPE is INDIVIDUAL ;
+            FORMAT is FREE ;
+            NOBSERVATIONS are 1769 ;
+            LISTWISE = ON ;
+
+  VARIABLE: NAMES are
+            ae0001 ae0004 ae0012 ae0008 ae0017 ae0010 ae0011
+            ae0006 ae0022 ae0034 ae0020 ae0021 ae0030 ae0023
+            ae0003 ae0013 ae0018 ae0031 ae0032 ae0033 ;
+            USEVARIABLES are
+            ae0004 ae0006 ae0008
+            ae0011 ae0012 ae0013;
+            MISSING are ALL (9) ;
+
+  ANALYSIS: MODEL = NOMEANSTRUCTURE ;
+            INFORMATION = EXPECTED ;
+            ESTIMATOR = MLR ;
+
+  MODEL:
+         EMP BY ae0004 ae0006 ae0008 ;
+         PUN BY ae0011 ae0012 ae0013 ;
+
+  OUTPUT: SAMPSTAT RESIDUAL STDYX TECH1 TECH4 ;
+
+
+
+*** WARNING in ANALYSIS command
+  MODEL=NOMEANSTRUCTURE is not allowed in conjuction with estimators MLM, MLMV,
+  MLF and MLR.  Request for MODEL=NOMEANSTRUCTURE will be ignored.
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Educational Styles (20 Items)
+Confirmatory Factor Model
+(Empathy and Punishment)
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        1605
+
+Number of dependent variables                                    6
+Number of independent variables                                  0
+Number of continuous latent variables                            2
+
+Observed dependent variables
+
+  Continuous
+   AE0004      AE0006      AE0008      AE0011      AE0012      AE0013
+
+Continuous latent variables
+   EMP         PUN
+
+
+Estimator                                                      MLR
+Information matrix                                        EXPECTED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  Erz.dat
+
+Input data format  FREE
+
+
+SAMPLE STATISTICS
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+      1         3.626         3.323         3.606         1.794         1.802
+
+
+           Means
+              AE0013
+              ________
+      1         1.460
+
+
+           Covariances
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+ AE0004         1.159
+ AE0006         0.534         1.651
+ AE0008         0.619         0.835         1.566
+ AE0011        -0.032         0.036        -0.035         1.316
+ AE0012        -0.049        -0.044        -0.096         0.484         1.305
+ AE0013        -0.051        -0.004        -0.022         0.347         0.355
+
+
+           Covariances
+              AE0013
+              ________
+ AE0013         0.893
+
+
+           Correlations
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+ AE0004         1.000
+ AE0006         0.386         1.000
+ AE0008         0.459         0.519         1.000
+ AE0011        -0.026         0.025        -0.025         1.000
+ AE0012        -0.040        -0.030        -0.067         0.369         1.000
+ AE0013        -0.050        -0.003        -0.018         0.320         0.329
+
+
+           Correlations
+              AE0013
+              ________
+ AE0013         1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       19
+
+Loglikelihood
+
+          H0 Value                      -14161.492
+          H0 Scaling Correction Factor      1.3402
+            for MLR
+          H1 Value                      -14155.847
+          H1 Scaling Correction Factor      1.2678
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   28360.984
+          Bayesian (BIC)                 28463.221
+          Sample-Size Adjusted BIC       28402.861
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                             10.304*
+          Degrees of Freedom                     8
+          P-Value                           0.2443
+          Scaling Correction Factor         1.0957
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.013
+          90 Percent C.I.                    0.000  0.034
+          Probability RMSEA <= .05           0.999
+
+CFI/TLI
+
+          CFI                                0.998
+          TLI                                0.996
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           1085.800
+          Degrees of Freedom                    15
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.014
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ EMP      BY
+    AE0004             1.000      0.000    999.000    999.000
+    AE0006             1.345      0.085     15.764      0.000
+    AE0008             1.566      0.105     14.881      0.000
+
+ PUN      BY
+    AE0011             1.000      0.000    999.000    999.000
+    AE0012             1.038      0.116      8.925      0.000
+    AE0013             0.738      0.083      8.869      0.000
+
+ PUN      WITH
+    EMP               -0.030      0.017     -1.710      0.087
+
+ Intercepts
+    AE0004             3.626      0.027    134.927      0.000
+    AE0006             3.323      0.032    103.633      0.000
+    AE0008             3.606      0.031    115.432      0.000
+    AE0011             1.794      0.029     62.635      0.000
+    AE0012             1.802      0.029     63.184      0.000
+    AE0013             1.460      0.024     61.927      0.000
+
+ Variances
+    EMP                0.396      0.040      9.899      0.000
+    PUN                0.467      0.068      6.898      0.000
+
+ Residual Variances
+    AE0004             0.763      0.039     19.647      0.000
+    AE0006             0.934      0.061     15.212      0.000
+    AE0008             0.595      0.070      8.450      0.000
+    AE0011             0.850      0.068     12.413      0.000
+    AE0012             0.803      0.068     11.852      0.000
+    AE0013             0.639      0.048     13.361      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ EMP      BY
+    AE0004             0.585      0.026     22.353      0.000
+    AE0006             0.659      0.027     24.593      0.000
+    AE0008             0.787      0.028     27.826      0.000
+
+ PUN      BY
+    AE0011             0.595      0.040     14.899      0.000
+    AE0012             0.620      0.040     15.604      0.000
+    AE0013             0.533      0.038     14.052      0.000
+
+ PUN      WITH
+    EMP               -0.069      0.040     -1.721      0.085
+
+ Intercepts
+    AE0004             3.368      0.068     49.402      0.000
+    AE0006             2.587      0.049     53.273      0.000
+    AE0008             2.881      0.059     48.916      0.000
+    AE0011             1.563      0.019     80.247      0.000
+    AE0012             1.577      0.020     79.366      0.000
+    AE0013             1.546      0.029     53.844      0.000
+
+ Variances
+    EMP                1.000      0.000    999.000    999.000
+    PUN                1.000      0.000    999.000    999.000
+
+ Residual Variances
+    AE0004             0.658      0.031     21.523      0.000
+    AE0006             0.566      0.035     16.024      0.000
+    AE0008             0.380      0.045      8.530      0.000
+    AE0011             0.645      0.048     13.563      0.000
+    AE0012             0.615      0.049     12.471      0.000
+    AE0013             0.716      0.040     17.672      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    AE0004             0.342      0.031     11.177      0.000
+    AE0006             0.434      0.035     12.296      0.000
+    AE0008             0.620      0.045     13.913      0.000
+    AE0011             0.355      0.048      7.450      0.000
+    AE0012             0.385      0.049      7.802      0.000
+    AE0013             0.284      0.040      7.026      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.999E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+      1         3.626         3.323         3.606         1.794         1.802
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              AE0013
+              ________
+      1         1.460
+
+
+           Residuals for Means/Intercepts/Thresholds
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+      1         0.000         0.000         0.000         0.000         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              AE0013
+              ________
+      1         0.000
+
+
+           Standardized Residuals (z-scores) for Means/Intercepts/Thresholds
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+      1         0.000         0.000         0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means/Intercepts/Thresholds
+              AE0013
+              ________
+      1       999.000
+
+
+           Normalized Residuals for Means/Intercepts/Thresholds
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+      1         0.000         0.000         0.000         0.000         0.000
+
+
+           Normalized Residuals for Means/Intercepts/Thresholds
+              AE0013
+              ________
+      1         0.000
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+ AE0004         1.159
+ AE0006         0.533         1.651
+ AE0008         0.620         0.834         1.566
+ AE0011        -0.030        -0.040        -0.047         1.316
+ AE0012        -0.031        -0.042        -0.048         0.484         1.305
+ AE0013        -0.022        -0.030        -0.034         0.344         0.357
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              AE0013
+              ________
+ AE0013         0.893
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+ AE0004         0.000
+ AE0006         0.001         0.000
+ AE0008        -0.001         0.001         0.000
+ AE0011        -0.003         0.076         0.011         0.000
+ AE0012        -0.018        -0.003        -0.048         0.000         0.000
+ AE0013        -0.029         0.026         0.013         0.002        -0.002
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              AE0013
+              ________
+ AE0013         0.000
+
+
+           Standardized Residuals (z-scores) for Covariances/Correlations/Residual Corr
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+ AE0004       999.000
+ AE0006         0.571         0.000
+ AE0008        -1.319         0.288         0.000
+ AE0011        -0.092         2.766         0.457         0.000
+ AE0012        -0.587        -0.091        -1.785        -0.223         0.000
+ AE0013        -1.064         0.984         0.577         0.984       999.000
+
+
+           Standardized Residuals (z-scores) for Covariances/Correlations/Residual Corr
+              AE0013
+              ________
+ AE0013         0.000
+
+
+           Normalized Residuals for Covariances/Correlations/Residual Correlations
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+ AE0004         0.000
+ AE0006         0.037         0.000
+ AE0008        -0.037         0.014         0.000
+ AE0011        -0.078         2.116         0.310         0.000
+ AE0012        -0.506        -0.071        -1.220        -0.010         0.000
+ AE0013        -0.957         0.819         0.426         0.065        -0.045
+
+
+           Normalized Residuals for Covariances/Correlations/Residual Correlations
+              AE0013
+              ________
+ AE0013         0.000
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+      1           1             2             3             4             5
+
+
+           NU
+              AE0013
+              ________
+      1           6
+
+
+           LAMBDA
+              EMP           PUN
+              ________      ________
+ AE0004             0             0
+ AE0006             7             0
+ AE0008             8             0
+ AE0011             0             0
+ AE0012             0             9
+ AE0013             0            10
+
+
+           THETA
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+ AE0004            11
+ AE0006             0            12
+ AE0008             0             0            13
+ AE0011             0             0             0            14
+ AE0012             0             0             0             0            15
+ AE0013             0             0             0             0             0
+
+
+           THETA
+              AE0013
+              ________
+ AE0013            16
+
+
+           ALPHA
+              EMP           PUN
+              ________      ________
+      1           0             0
+
+
+           BETA
+              EMP           PUN
+              ________      ________
+ EMP                0             0
+ PUN                0             0
+
+
+           PSI
+              EMP           PUN
+              ________      ________
+ EMP               17
+ PUN               18            19
+
+
+     STARTING VALUES
+
+
+           NU
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+      1         3.626         3.323         3.606         1.794         1.802
+
+
+           NU
+              AE0013
+              ________
+      1         1.460
+
+
+           LAMBDA
+              EMP           PUN
+              ________      ________
+ AE0004         1.000         0.000
+ AE0006         1.349         0.000
+ AE0008         1.563         0.000
+ AE0011         0.000         1.000
+ AE0012         0.000         1.025
+ AE0013         0.000         0.735
+
+
+           THETA
+              AE0004        AE0006        AE0008        AE0011        AE0012
+              ________      ________      ________      ________      ________
+ AE0004         0.580
+ AE0006         0.000         0.826
+ AE0008         0.000         0.000         0.783
+ AE0011         0.000         0.000         0.000         0.659
+ AE0012         0.000         0.000         0.000         0.000         0.653
+ AE0013         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              AE0013
+              ________
+ AE0013         0.447
+
+
+           ALPHA
+              EMP           PUN
+              ________      ________
+      1         0.000         0.000
+
+
+           BETA
+              EMP           PUN
+              ________      ________
+ EMP            0.000         0.000
+ PUN            0.000         0.000
+
+
+           PSI
+              EMP           PUN
+              ________      ________
+ EMP            0.050
+ PUN            0.000         0.050
+
+
+TECHNICAL 4 OUTPUT
+
+
+     ESTIMATES DERIVED FROM THE MODEL
+
+
+           ESTIMATED MEANS FOR THE LATENT VARIABLES
+              EMP           PUN
+              ________      ________
+      1         0.000         0.000
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              EMP           PUN
+              ________      ________
+ EMP            0.396
+ PUN           -0.030         0.467
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              EMP           PUN
+              ________      ________
+ EMP            1.000
+ PUN           -0.069         1.000
+
+
+     Beginning Time:  11:10:31
+        Ending Time:  11:10:31
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2012 Muthen & Muthen

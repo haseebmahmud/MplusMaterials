@@ -1,0 +1,616 @@
+Mplus VERSION 7 (Mac)
+MUTHEN & MUTHEN
+08/14/2015  11:53 AM
+
+INPUT INSTRUCTIONS
+
+  Title: Crimoc-Datensatz (t1-t4, 2002-2005)
+         CFA: Empathie, Bestrafung und Misshandlung (t1,t2,t3)
+         Basismodell, Tabelle 7.10 in Kapitel 7
+         Sch�tzer: ML
+
+  Data:
+    File is panel7_10.dat ;
+    Listwise = on ;
+
+  Variable:
+    Names are
+       al0618 al0619 al0620 al0053 al0054 al0055 al0076 al0070 al0071 al0077
+       al0078 al0087 al0093 al0061 al0083 al0085 ae0001 ae0003 ae0004 ae0006
+       ae0008 ae0011 ae0012 ae0013 ae0020 ae0021 ae0022 ae0010 ae0033 ae0034
+       ae0031 ae0032 at0720 at0721 at0722 at0723 at0724 at0725 at0726 at0727
+       at0728 at0729 bl0618 bl0619 bl0620 bl0053 bl0054 bl0055 bl0076 bl0070
+       bl0071 bl0077 bl0078 bl0087 bl0093 bl0061 bl0083 bl0085 be0001 be0003
+       be0004 be0006 be0008 be0011 be0012 be0013 be0020 be0021 be0022 be0010
+       be0033 be0034 be0031 be0032 bt0720 bt0721 bt0722 bt0723 bt0724 bt0725
+       bt0726 bt0727 bt0728 bt0729 cl0618 cl0619 cl0620 cl0053 cl0054 cl0055
+       cl0076 cl0070 cl0071 cl0077 cl0078 cl0087 cl0093 cl0061 cl0083 cl0085
+       ce0001 ce0003 ce0004 ce0006 ce0008 ce0011 ce0012 ce0013 ce0020 ce0021
+       ce0022 ce0010 ce0033 ce0034 ce0031 ce0032 ct0720 ct0721 ct0722 ct0723
+       ct0724 ct0725 ct0726 ct0727 ct0728 ct0729 dl0618 dl0619 dl0620 dl0053
+       dl0054 dl0055 dl0076 dl0070 dl0071 dl0077 dl0078 dl0087 dl0093 dl0061
+       dl0083 dl0085 de0001 de0003 de0004 de0006 de0008 de0011 de0012 de0013
+       de0020 de0021 de0022 de0010 de0033 de0034 de0031 de0032 dt0720 dt0721
+       dt0722 dt0723 dt0724 dt0725 dt0726 dt0727 dt0728 dt0729 aa0011 aschulf
+       apraev ainz ba0011 bschulf bpraev binz ca0011 cschulf cpraev cinz
+       da0011 dschulf dpraev dinz;
+    Missing are all (-9999) ;
+    Usevariables are ae0004 ae0006 ae0008 be0004 be0006 be0008 ce0004 ce0006 ce0008 ;
+
+  Analysis:
+    Model = nomeanstructure ;
+    Information = expected ;
+    Estimator = ML ;
+
+  Model:
+
+  ! Factor loadings equal
+
+            Emp1 by ae0004;
+            Emp1 by ae0006 (l1);
+            Emp1 by ae0008 (l2);
+            Emp2 by be0004;
+            Emp2 by be0006 (l1);
+            Emp2 by be0008 (l2);
+            Emp3 by ce0004;
+            Emp3 by ce0006 (l1);
+            Emp3 by ce0008 (l2);
+
+  ! Equal variances of factors
+
+            Emp1 Emp2 Emp3 (v) ;
+
+
+
+  Output: Sampstat Residual Stdyx Modindices Tech1 Tech4;
+
+
+
+INPUT READING TERMINATED NORMALLY
+
+
+
+Crimoc-Datensatz (t1-t4, 2002-2005)
+CFA: Empathie, Bestrafung und Misshandlung (t1,t2,t3)
+Basismodell, Tabelle 7.10 in Kapitel 7
+Sch�tzer: ML
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        1543
+
+Number of dependent variables                                    9
+Number of independent variables                                  0
+Number of continuous latent variables                            3
+
+Observed dependent variables
+
+  Continuous
+   AE0004      AE0006      AE0008      BE0004      BE0006      BE0008
+   CE0004      CE0006      CE0008
+
+Continuous latent variables
+   EMP1        EMP2        EMP3
+
+
+Estimator                                                       ML
+Information matrix                                        EXPECTED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  panel7_10.dat
+
+Input data format  FREE
+
+
+SAMPLE STATISTICS
+
+
+     SAMPLE STATISTICS
+
+
+           Means
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+      1         3.616         3.325         3.613         3.470         3.196
+
+
+           Means
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+      1         3.452         3.434         3.150         3.390
+
+
+           Covariances
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+ AE0004         1.152
+ AE0006         0.511         1.653
+ AE0008         0.607         0.825         1.564
+ BE0004         0.420         0.346         0.358         1.169
+ BE0006         0.345         0.607         0.503         0.526         1.604
+ BE0008         0.405         0.596         0.694         0.629         0.865
+ CE0004         0.388         0.247         0.333         0.531         0.387
+ CE0006         0.343         0.508         0.481         0.446         0.680
+ CE0008         0.362         0.464         0.597         0.444         0.614
+
+
+           Covariances
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+ BE0008         1.558
+ CE0004         0.446         1.178
+ CE0006         0.617         0.603         1.554
+ CE0008         0.733         0.638         0.866         1.469
+
+
+           Correlations
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+ AE0004         1.000
+ AE0006         0.371         1.000
+ AE0008         0.452         0.513         1.000
+ BE0004         0.362         0.249         0.265         1.000
+ BE0006         0.254         0.373         0.318         0.384         1.000
+ BE0008         0.302         0.372         0.444         0.466         0.547
+ CE0004         0.333         0.177         0.245         0.452         0.281
+ CE0006         0.257         0.317         0.309         0.331         0.431
+ CE0008         0.278         0.298         0.394         0.339         0.400
+
+
+           Correlations
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+ BE0008         1.000
+ CE0004         0.329         1.000
+ CE0006         0.397         0.446         1.000
+ CE0008         0.484         0.485         0.573         1.000
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       15
+
+Loglikelihood
+
+          H0 Value                      -20057.693
+          H1 Value                      -19892.936
+
+Information Criteria
+
+          Akaike (AIC)                   40145.386
+          Bayesian (BIC)                 40225.508
+          Sample-Size Adjusted BIC       40177.857
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            329.515
+          Degrees of Freedom                    30
+          P-Value                           0.0000
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.080
+          90 Percent C.I.                    0.073  0.088
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.933
+          TLI                                0.919
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           4479.684
+          Degrees of Freedom                    36
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.045
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ EMP1     BY
+    AE0004             1.000      0.000    999.000    999.000
+    AE0006             1.348      0.040     33.995      0.000
+    AE0008             1.487      0.042     35.746      0.000
+
+ EMP2     BY
+    BE0004             1.000      0.000    999.000    999.000
+    BE0006             1.348      0.040     33.995      0.000
+    BE0008             1.487      0.042     35.746      0.000
+
+ EMP3     BY
+    CE0004             1.000      0.000    999.000    999.000
+    CE0006             1.348      0.040     33.995      0.000
+    CE0008             1.487      0.042     35.746      0.000
+
+ EMP2     WITH
+    EMP1               0.294      0.020     14.892      0.000
+
+ EMP3     WITH
+    EMP1               0.253      0.019     13.555      0.000
+    EMP2               0.320      0.020     15.776      0.000
+
+ Variances
+    EMP1               0.420      0.023     18.598      0.000
+    EMP2               0.420      0.023     18.598      0.000
+    EMP3               0.420      0.023     18.598      0.000
+
+ Residual Variances
+    AE0004             0.749      0.031     23.880      0.000
+    AE0006             0.918      0.042     21.926      0.000
+    AE0008             0.657      0.037     17.759      0.000
+    BE0004             0.752      0.031     24.488      0.000
+    BE0006             0.853      0.038     22.405      0.000
+    BE0008             0.606      0.033     18.327      0.000
+    CE0004             0.737      0.030     24.390      0.000
+    CE0006             0.753      0.035     21.539      0.000
+    CE0008             0.538      0.031     17.126      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ EMP1     BY
+    AE0004             0.599      0.014     42.891      0.000
+    AE0006             0.674      0.013     51.804      0.000
+    AE0008             0.765      0.012     62.204      0.000
+
+ EMP2     BY
+    BE0004             0.599      0.014     43.695      0.000
+    BE0006             0.687      0.013     54.596      0.000
+    BE0008             0.778      0.012     67.281      0.000
+
+ EMP3     BY
+    CE0004             0.602      0.014     43.842      0.000
+    CE0006             0.709      0.013     56.272      0.000
+    CE0008             0.796      0.012     68.531      0.000
+
+ EMP2     WITH
+    EMP1               0.700      0.023     30.052      0.000
+
+ EMP3     WITH
+    EMP1               0.603      0.025     23.689      0.000
+    EMP2               0.763      0.021     37.153      0.000
+
+ Variances
+    EMP1               1.000      0.000    999.000    999.000
+    EMP2               1.000      0.000    999.000    999.000
+    EMP3               1.000      0.000    999.000    999.000
+
+ Residual Variances
+    AE0004             0.641      0.017     38.256      0.000
+    AE0006             0.546      0.018     31.183      0.000
+    AE0008             0.415      0.019     22.020      0.000
+    BE0004             0.642      0.016     39.128      0.000
+    BE0006             0.528      0.017     30.554      0.000
+    BE0008             0.395      0.018     21.960      0.000
+    CE0004             0.637      0.017     38.498      0.000
+    CE0006             0.497      0.018     27.791      0.000
+    CE0008             0.367      0.018     19.864      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    AE0004             0.359      0.017     21.446      0.000
+    AE0006             0.454      0.018     25.902      0.000
+    AE0008             0.585      0.019     31.102      0.000
+    BE0004             0.358      0.016     21.847      0.000
+    BE0006             0.472      0.017     27.298      0.000
+    BE0008             0.605      0.018     33.641      0.000
+    CE0004             0.363      0.017     21.921      0.000
+    CE0006             0.503      0.018     28.136      0.000
+    CE0008             0.633      0.018     34.266      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.783E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+ AE0004         1.168
+ AE0006         0.566         1.680
+ AE0008         0.624         0.841         1.585
+ BE0004         0.294         0.396         0.437         1.171
+ BE0006         0.396         0.533         0.588         0.566         1.616
+ BE0008         0.437         0.588         0.649         0.624         0.841
+ CE0004         0.253         0.341         0.376         0.320         0.431
+ CE0006         0.341         0.459         0.507         0.431         0.581
+ CE0008         0.376         0.507         0.559         0.476         0.641
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+ BE0008         1.534
+ CE0004         0.476         1.157
+ CE0006         0.641         0.566         1.515
+ CE0008         0.708         0.624         0.841         1.466
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+ AE0004        -0.017
+ AE0006        -0.055        -0.028
+ AE0008        -0.017        -0.017        -0.022
+ BE0004         0.126        -0.050        -0.079        -0.003
+ BE0006        -0.051         0.073        -0.085        -0.040        -0.012
+ BE0008        -0.032         0.007         0.044         0.005         0.023
+ CE0004         0.134        -0.094        -0.043         0.211        -0.045
+ CE0006         0.002         0.049        -0.026         0.014         0.098
+ CE0008        -0.014        -0.043         0.037        -0.032        -0.028
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+ BE0008         0.023
+ CE0004        -0.030         0.021
+ CE0006        -0.025         0.037         0.038
+ CE0008         0.024         0.013         0.024         0.002
+
+
+           Standardized Residuals (z-scores) for Covariances/Correlations/Residual Corr
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+ AE0004        -0.807
+ AE0006        -1.852        -0.882
+ AE0008        -0.616        -0.486        -0.702
+ BE0004         5.148        -1.737        -3.035        -0.147
+ BE0006        -1.842         2.457        -3.028        -1.352        -0.390
+ BE0008        -1.223         0.242         1.889         0.169         0.675
+ CE0004         5.365        -3.290        -1.627         8.181        -1.577
+ CE0006         0.089         1.683        -0.939         0.507         3.473
+ CE0008        -0.566        -1.590         1.803        -1.259        -0.983
+
+
+           Standardized Residuals (z-scores) for Covariances/Correlations/Residual Corr
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+ BE0008         0.702
+ CE0004        -1.113         0.891
+ CE0006        -0.852         1.243         1.151
+ CE0008         1.120         0.474         0.759         0.063
+
+
+           Normalized Residuals for Covariances/Correlations/Residual Correlations
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+ AE0004        -0.404
+ AE0006        -1.456        -0.475
+ AE0008        -0.467        -0.360        -0.388
+ BE0004         4.006        -1.360        -2.226        -0.077
+ BE0006        -1.423         1.649        -2.019        -1.061        -0.216
+ BE0008        -0.897         0.167         1.012         0.129         0.500
+ CE0004         4.304        -2.598        -1.210         6.425        -1.229
+ CE0006         0.069         1.137        -0.619         0.394         2.248
+ CE0008        -0.409        -1.043         0.902        -0.915        -0.657
+
+
+           Normalized Residuals for Covariances/Correlations/Residual Correlations
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+ BE0008         0.411
+ CE0004        -0.830         0.491
+ CE0006        -0.578         0.982         0.677
+ CE0008         0.570         0.357         0.545         0.035
+
+
+MODEL MODIFICATION INDICES
+
+NOTE:  Modification indices for direct effects of observed dependent variables
+regressed on covariates may not be included.  To include these, request
+MODINDICES (ALL).
+
+Minimum M.I. value for printing the modification index    10.000
+
+                            M.I.     E.P.C.  Std E.P.C.  StdYX E.P.C.
+
+WITH Statements
+
+BE0004   WITH AE0004       59.509     0.168      0.168        0.224
+BE0004   WITH AE0008       19.054    -0.102     -0.102       -0.145
+BE0006   WITH AE0006       25.220     0.141      0.141        0.159
+BE0006   WITH AE0008       13.551    -0.096     -0.096       -0.129
+BE0008   WITH AE0004       11.592    -0.076     -0.076       -0.113
+BE0008   WITH AE0008       20.121     0.112      0.112        0.178
+CE0004   WITH AE0004       56.288     0.161      0.161        0.217
+CE0004   WITH AE0006       20.256    -0.111     -0.111       -0.135
+CE0004   WITH BE0004      123.059     0.238      0.238        0.320
+CE0004   WITH BE0006       11.723    -0.082     -0.082       -0.103
+CE0004   WITH BE0008       12.177    -0.077     -0.077       -0.115
+CE0006   WITH AE0006       11.690     0.091      0.091        0.109
+CE0006   WITH BE0006       27.483     0.136      0.136        0.169
+CE0006   WITH BE0008       10.864    -0.079     -0.079       -0.116
+CE0008   WITH AE0008       19.520     0.104      0.104        0.175
+CE0008   WITH BE0004       16.866    -0.088     -0.088       -0.139
+CE0008   WITH BE0008       11.074     0.078      0.078        0.137
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           LAMBDA
+              EMP1          EMP2          EMP3
+              ________      ________      ________
+ AE0004             0             0             0
+ AE0006             1             0             0
+ AE0008             2             0             0
+ BE0004             0             0             0
+ BE0006             0             1             0
+ BE0008             0             2             0
+ CE0004             0             0             0
+ CE0006             0             0             1
+ CE0008             0             0             2
+
+
+           THETA
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+ AE0004             3
+ AE0006             0             4
+ AE0008             0             0             5
+ BE0004             0             0             0             6
+ BE0006             0             0             0             0             7
+ BE0008             0             0             0             0             0
+ CE0004             0             0             0             0             0
+ CE0006             0             0             0             0             0
+ CE0008             0             0             0             0             0
+
+
+           THETA
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+ BE0008             8
+ CE0004             0             9
+ CE0006             0             0            10
+ CE0008             0             0             0            11
+
+
+           BETA
+              EMP1          EMP2          EMP3
+              ________      ________      ________
+ EMP1               0             0             0
+ EMP2               0             0             0
+ EMP3               0             0             0
+
+
+           PSI
+              EMP1          EMP2          EMP3
+              ________      ________      ________
+ EMP1              12
+ EMP2              13            12
+ EMP3              14            15            12
+
+
+     STARTING VALUES
+
+
+           LAMBDA
+              EMP1          EMP2          EMP3
+              ________      ________      ________
+ AE0004         1.000         0.000         0.000
+ AE0006         1.000         0.000         0.000
+ AE0008         1.000         0.000         0.000
+ BE0004         0.000         1.000         0.000
+ BE0006         0.000         1.000         0.000
+ BE0008         0.000         1.000         0.000
+ CE0004         0.000         0.000         1.000
+ CE0006         0.000         0.000         1.000
+ CE0008         0.000         0.000         1.000
+
+
+           THETA
+              AE0004        AE0006        AE0008        BE0004        BE0006
+              ________      ________      ________      ________      ________
+ AE0004         0.576
+ AE0006         0.000         0.826
+ AE0008         0.000         0.000         0.782
+ BE0004         0.000         0.000         0.000         0.584
+ BE0006         0.000         0.000         0.000         0.000         0.802
+ BE0008         0.000         0.000         0.000         0.000         0.000
+ CE0004         0.000         0.000         0.000         0.000         0.000
+ CE0006         0.000         0.000         0.000         0.000         0.000
+ CE0008         0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              BE0008        CE0004        CE0006        CE0008
+              ________      ________      ________      ________
+ BE0008         0.779
+ CE0004         0.000         0.589
+ CE0006         0.000         0.000         0.777
+ CE0008         0.000         0.000         0.000         0.734
+
+
+           BETA
+              EMP1          EMP2          EMP3
+              ________      ________      ________
+ EMP1           0.000         0.000         0.000
+ EMP2           0.000         0.000         0.000
+ EMP3           0.000         0.000         0.000
+
+
+           PSI
+              EMP1          EMP2          EMP3
+              ________      ________      ________
+ EMP1           0.050
+ EMP2           0.000         0.050
+ EMP3           0.000         0.000         0.050
+
+
+TECHNICAL 4 OUTPUT
+
+
+     ESTIMATES DERIVED FROM THE MODEL
+
+
+           ESTIMATED COVARIANCE MATRIX FOR THE LATENT VARIABLES
+              EMP1          EMP2          EMP3
+              ________      ________      ________
+ EMP1           0.420
+ EMP2           0.294         0.420
+ EMP3           0.253         0.320         0.420
+
+
+           ESTIMATED CORRELATION MATRIX FOR THE LATENT VARIABLES
+              EMP1          EMP2          EMP3
+              ________      ________      ________
+ EMP1           1.000
+ EMP2           0.700         1.000
+ EMP3           0.603         0.763         1.000
+
+
+     Beginning Time:  11:53:41
+        Ending Time:  11:53:41
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2012 Muthen & Muthen

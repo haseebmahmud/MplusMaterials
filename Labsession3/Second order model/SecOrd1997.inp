@@ -1,0 +1,41 @@
+TITLE: Second-Order Factor Model 
+       (Reinecke/Schmidt/Ajzen, 1997)
+       Basic Model
+
+DATA:
+        FILE is 1997.dat;
+        FORMAT is free;
+        TYPE is COVARIANCE;
+        NOBSERVATIONS are 800;
+
+VARIABLE:
+        NAMES ARE
+        V50 V53 V55 V57 V47 V59
+        V83_1 V83_3 V94_A V94_B V94_C V84 V85;
+
+ANALYSIS: TYPE = GENERAL ;
+
+MODEL:
+
+!Measurement Model (First-order factors)
+
+        ATT1 BY V50;
+        ATT1 BY V53;
+        NORM1 BY V55;
+        NORM1 BY V57;
+        PBC1 BY V47;
+        PBC1 BY V59;
+        ATT2 BY V83_1;
+        ATT2 BY V83_3;
+        NORM2 BY V94_A;
+        NORM2 BY V94_B;
+        NORM2 BY V94_C;
+        PBC2 BY V84;
+        PBC2 BY V85;
+
+!Measurement Model (Second-order factors) 
+
+        VER BY ATT1 NORM1 PBC1;
+        PRAE BY ATT2 NORM2 PBC2;
+
+OUTPUT: SAMPSTAT RESIDUAL STDYX TECH1 TECH4;

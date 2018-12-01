@@ -1,0 +1,7 @@
+TITLE: this is an example of a linear regression for a continuous observed dependent
+variable with two covariates 
+
+DATA: FILE IS "/Users/mhaseeb/Documents/GESIS/Course\ 2/chapter3/ex3.1.dat";
+
+VARIABLE: NAMES ARE y1-y6 x1-x4; USEVARIABLES ARE y1 x1 x3;
+MODEL: y1 ON x1 x3;

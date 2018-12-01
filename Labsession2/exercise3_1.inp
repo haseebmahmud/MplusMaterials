@@ -1,0 +1,12 @@
+Data: FILE is ess3at_TRACO_UNIV_ATT.dat;
+listwise=on;
+Variable: Names are ipmodst imptrad ipfrule ipbhprp ipeqopt ipudrst
+impenv imsmetn imdfetn impcntr;
+usevariables are ipmodst imptrad ipfrule ipbhprp;
+missing = ipmodst imptrad ipfrule ipbhprp (7-9);
+analysis:
+Model = nomeanstructure;
+information = expected;
+model: TRA by ipmodst imptrad ipfrule ipbhprp;
+TRA@1.0;
+output: sampstat residual Stdyx Tech1;

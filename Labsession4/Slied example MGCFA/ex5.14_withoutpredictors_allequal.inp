@@ -1,0 +1,60 @@
+TITLE:	this is an example of a multiple group CFA
+	
+DATA:	FILE IS ex5.14.dat;
+
+VARIABLE:  NAMES ARE y1-y6 x1-x3 g;
+	       GROUPING IS g (1=male 2=female);
+           USEVARIABLES ARE y1-y6; 
+
+ANALYSIS:  MODEL = NOMEANSTRUCTURE;
+           INFORMATION = EXPECTED;
+
+MODEL:  
+
+!Factor model
+    
+    f1 BY y1* (L1);
+    f1 BY y2  (L2); 
+    f1 BY y3  (L3);
+
+	f2 BY y4* (L4); 
+    f2 BY y5  (L5);
+    f2 BY y6  (L6);
+
+!Structural model 
+
+    f1@1 (V1); 
+    f2@1 (V2);
+    f1 WITH f2 (COV); 
+
+!Random Measurement Errors
+
+    y1 (R1) ; 
+    y2 (R2) ;
+    y3 (R3) ;
+    y4 (R4) ;
+    y5 (R5) ;
+    y6 (R6) ;
+
+Model female: 
+
+    f1 BY y1* (L1);
+    f1 BY y2  (L2); 
+    f1 BY y3  (L3);
+
+	f2 BY y4* (L4); 
+    f2 BY y5  (L5);
+    f2 BY y6  (L6);
+
+    f1@1 (V1); 
+    f2@1 (V2);
+    f1 WITH f2 (COV); 
+
+    y1 (R1) ; 
+    y2 (R2) ;
+    y3 (R3) ;
+    y4 (R4) ;
+    y5 (R5) ;
+    y6 (R6) ;
+    
+OUTPUT:	SAMPSTAT RESIDUAL STDYX TECH1 TECH4 MODINDICES;

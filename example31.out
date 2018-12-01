@@ -1,0 +1,29 @@
+Mplus VERSION 7 (Mac)
+MUTHEN & MUTHEN
+07/20/2015  10:35 PM
+
+INPUT INSTRUCTIONS
+
+  TITLE: this is an example of a linear regression for a continuous observed dependent
+  variable with two covariates
+
+  DATA: FILE IS ex3.1.dat;
+
+  VARIABLE: NAMES ARE y1-y6 x1-x4; USEVARIABLES ARE y1 x1 x3;
+  MODEL: y1 ON x1 x3;
+
+*** ERROR in DATA command
+  The file specified for the FILE option cannot be found.  Check that this
+  file exists:  ex3.1.dat
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2012 Muthen & Muthen

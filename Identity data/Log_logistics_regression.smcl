@@ -1,0 +1,73 @@
+{smcl}
+{com}{sf}{ul off}{txt}{.-}
+      name:  {res}<unnamed>
+       {txt}log:  {res}C:\Identity data\Log_logistics_regression.smcl
+  {txt}log type:  {res}smcl
+ {txt}opened on:  {res}12 Mar 2015, 15:13:30
+
+{com}. do "C:\Users\mhaseeb\AppData\Local\Temp\STD00000000.tmp"
+{txt}
+{com}. use "C:\Identity data\Identity II\ZA3910_v2-1-0.dta"
+{txt}
+{com}. 
+. * Creating EU subset
+. 
+. keep if COUNTRY == 4 | COUNTRY == 8 | COUNTRY == 10 | COUNTRY == 14 | ///
+>         COUNTRY == 26 | COUNTRY == 28 | COUNTRY == 32 | COUNTRY == 33 ///
+>         | COUNTRY == 37
+{txt}(35351 observations deleted)
+
+{com}. 
+. * Checking if subsetting works
+. 
+. tabulate COUNTRY
+
+  {txt}Country/ Sample (ISO {c |}
+                 3166) {c |}      Freq.     Percent        Cum.
+{hline 23}{c +}{hline 35}
+Great Britain (GB-GBN) {c |}{res}        873        8.20        8.20
+{txt}          Hungary (HU) {c |}{res}      1,021        9.59       17.80
+{txt}          Ireland (IE) {c |}{res}      1,065       10.01       27.80
+{txt}   Czech Republic (CZ) {c |}{res}      1,276       11.99       39.80
+{txt}           Latvia (LV) {c |}{res}      1,000        9.40       49.19
+{txt}           France (FR) {c |}{res}      1,669       15.68       64.88
+{txt}          Denmark (DK) {c |}{res}      1,322       12.42       77.30
+{txt}      Switzerland (CH) {c |}{res}      1,037        9.74       87.04
+{txt}          Finland (FI) {c |}{res}      1,379       12.96      100.00
+{txt}{hline 23}{c +}{hline 35}
+                 Total {c |}{res}     10,642      100.00
+{txt}
+{com}. 
+. tabulate v74
+
+  {txt}Q24b Vote if {c |}
+ referendum to {c |}
+ remain member {c |}      Freq.     Percent        Cum.
+{hline 15}{c +}{hline 35}
+             1 {c |}{res}      1,871       72.83       72.83
+{txt}  Vote against {c |}{res}        698       27.17      100.00
+{txt}{hline 15}{c +}{hline 35}
+         Total {c |}{res}      2,569      100.00
+{txt}
+{com}. 
+{txt}end of do-file
+
+{com}. logistic v74 sex age educyrs  urbrural party_lr v23 v36 v38 v42 v44 v38 v49 v50 v51 v52 v53 v55 v40
+{txt}outcome does not vary; remember:
+                                  0 = negative outcome,
+        all other nonmissing values = positive outcome
+{search r(2000):r(2000);}
+
+{com}. summarize v74
+
+{txt}    Variable {c |}       Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 56}
+{space 9}v74 {c |}{res}      2569    1.271701    .4449232          1          2
+
+{com}. summarize v74
+
+{txt}    Variable {c |}       Obs        Mean    Std. Dev.       Min        Max
+{hline 13}{c +}{hline 56}
+{space 9}v74 {c |}{res}      2569    1.271701    .4449232          1          2
+
+{com}. exit, clear

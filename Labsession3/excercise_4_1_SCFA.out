@@ -1,0 +1,731 @@
+Mplus VERSION 7 (Mac)
+MUTHEN & MUTHEN
+08/12/2015   4:51 PM
+
+INPUT INSTRUCTIONS
+
+  Title: Simultenous CFA
+
+  Data: FILE is ess3at_TRACO_UNIV_ATT.dat;
+  !listwise=on;
+
+  Variable: Names are ipmodst imptrad ipfrule ipbhprp
+  ipeqopt ipudrst impenv imsmetn imdfetn impcntr;
+
+  usevariables are ALL;
+
+  missing = ipmodst imptrad ipfrule ipbhprp ipeqopt
+  ipudrst impenv(7-9) imsmetn imdfetn impcntr (6-9);
+
+  analysis: 	!Model = nomeanstructure;
+  			!information = expected;
+  			estimator = mlr;
+
+  model: 		ATT BY impcntr;
+  			ATT BY imdfetn;
+  			ATT BY imsmetn;
+
+  			UNIV BY ipeqopt;
+  			UNIV BY ipudrst;
+  			UNIV BY impenv;
+
+  			TRACO BY ipmodst;
+  			TRACO BY imptrad;
+  			TRACO BY ipfrule;
+  			TRACO BY ipbhprp;
+
+  			!ATT WITH UNIV;
+  			!UNIV WITH ATT;
+  			!TRACO WITH ATT;
+
+         		!ATT WITH UNIV@1.0;
+         		!UNIV WITH ATT@1.0;
+         		!TRACO WITH ATT@1.0;
+         		TRACO WITH ATT@0.0;
+
+
+  output: sampstat residual Stdyx Tech1;
+
+
+
+*** WARNING
+  Data set contains cases with missing on all variables.
+  These cases were not included in the analysis.
+  Number of cases with missing on all variables:  2
+   1 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+Simultenous CFA
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 1
+Number of observations                                        2403
+
+Number of dependent variables                                   10
+Number of independent variables                                  0
+Number of continuous latent variables                            3
+
+Observed dependent variables
+
+  Continuous
+   IPMODST     IMPTRAD     IPFRULE     IPBHPRP     IPEQOPT     IPUDRST
+   IMPENV      IMSMETN     IMDFETN     IMPCNTR
+
+Continuous latent variables
+   ATT         UNIV        TRACO
+
+
+Estimator                                                      MLR
+Information matrix                                        OBSERVED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+Maximum number of iterations for H1                           2000
+Convergence criterion for H1                             0.100D-03
+
+Input data file(s)
+  ess3at_TRACO_UNIV_ATT.dat
+
+Input data format  FREE
+
+
+SUMMARY OF DATA
+
+     Number of missing data patterns            66
+
+
+COVARIANCE COVERAGE OF DATA
+
+Minimum covariance coverage value   0.100
+
+
+     PROPORTION OF DATA PRESENT
+
+
+           Covariance Coverage
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        0.982
+ IMPTRAD        0.974         0.983
+ IPFRULE        0.958         0.958         0.964
+ IPBHPRP        0.961         0.964         0.946         0.968
+ IPEQOPT        0.970         0.970         0.955         0.958         0.978
+ IPUDRST        0.966         0.967         0.953         0.953         0.964
+ IMPENV         0.972         0.977         0.955         0.963         0.970
+ IMSMETN        0.934         0.935         0.919         0.923         0.931
+ IMDFETN        0.936         0.937         0.921         0.926         0.933
+ IMPCNTR        0.925         0.925         0.909         0.913         0.921
+
+
+           Covariance Coverage
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST        0.974
+ IMPENV         0.965         0.980
+ IMSMETN        0.928         0.933         0.951
+ IMDFETN        0.929         0.934         0.945         0.953
+ IMPCNTR        0.918         0.922         0.931         0.936         0.940
+
+
+SAMPLE STATISTICS
+
+
+     ESTIMATED SAMPLE STATISTICS
+
+
+           Means
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1         3.264         2.827         3.647         2.897         2.107
+
+
+           Means
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+      1         2.482         2.230         2.225         2.631         2.614
+
+
+           Covariances
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        1.696
+ IMPTRAD        0.450         1.892
+ IPFRULE        0.308         0.519         1.804
+ IPBHPRP        0.633         0.753         0.611         1.701
+ IPEQOPT        0.200         0.076         0.003         0.102         1.083
+ IPUDRST        0.240         0.109        -0.007         0.091         0.472
+ IMPENV         0.233         0.309         0.016         0.232         0.400
+ IMSMETN       -0.040        -0.110        -0.207        -0.111         0.153
+ IMDFETN       -0.055        -0.168        -0.200        -0.184         0.190
+ IMPCNTR       -0.013        -0.148        -0.226        -0.182         0.208
+
+
+           Covariances
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST        1.190
+ IMPENV         0.454         1.166
+ IMSMETN        0.174         0.152         0.652
+ IMDFETN        0.195         0.139         0.473         0.673
+ IMPCNTR        0.213         0.165         0.438         0.553         0.709
+
+
+           Correlations
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        1.000
+ IMPTRAD        0.251         1.000
+ IPFRULE        0.176         0.281         1.000
+ IPBHPRP        0.372         0.420         0.349         1.000
+ IPEQOPT        0.148         0.053         0.002         0.075         1.000
+ IPUDRST        0.169         0.072        -0.005         0.064         0.416
+ IMPENV         0.166         0.208         0.011         0.165         0.356
+ IMSMETN       -0.038        -0.099        -0.191        -0.105         0.182
+ IMDFETN       -0.051        -0.149        -0.182        -0.172         0.222
+ IMPCNTR       -0.012        -0.127        -0.200        -0.166         0.237
+
+
+           Correlations
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST        1.000
+ IMPENV         0.386         1.000
+ IMSMETN        0.197         0.175         1.000
+ IMDFETN        0.218         0.157         0.714         1.000
+ IMPCNTR        0.232         0.182         0.645         0.801         1.000
+
+
+     MAXIMUM LOG-LIKELIHOOD VALUE FOR THE UNRESTRICTED (H1) MODEL IS  -31419.100
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       32
+
+Loglikelihood
+
+          H0 Value                      -31583.525
+          H0 Scaling Correction Factor      1.1380
+            for MLR
+          H1 Value                      -31419.100
+          H1 Scaling Correction Factor      1.1071
+            for MLR
+
+Information Criteria
+
+          Akaike (AIC)                   63231.050
+          Bayesian (BIC)                 63416.153
+          Sample-Size Adjusted BIC       63314.482
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                            305.315*
+          Degrees of Freedom                    33
+          P-Value                           0.0000
+          Scaling Correction Factor         1.0771
+            for MLR
+
+*   The chi-square value for MLM, MLMV, MLR, ULSMV, WLSM and WLSMV cannot be used
+    for chi-square difference testing in the regular way.  MLM, MLR and WLSM
+    chi-square difference testing is described on the Mplus website.  MLMV, WLSMV,
+    and ULSMV difference testing is done using the DIFFTEST option.
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.059
+          90 Percent C.I.                    0.053  0.065
+          Probability RMSEA <= .05           0.009
+
+CFI/TLI
+
+          CFI                                0.952
+          TLI                                0.934
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           5708.074
+          Degrees of Freedom                    45
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.070
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ATT      BY
+    IMPCNTR            1.000      0.000    999.000    999.000
+    IMDFETN            1.062      0.019     55.328      0.000
+    IMSMETN            0.852      0.020     43.254      0.000
+
+ UNIV     BY
+    IPEQOPT            1.000      0.000    999.000    999.000
+    IPUDRST            1.102      0.063     17.412      0.000
+    IMPENV             0.993      0.066     15.124      0.000
+
+ TRACO    BY
+    IPMODST            1.000      0.000    999.000    999.000
+    IMPTRAD            1.237      0.084     14.726      0.000
+    IPFRULE            0.952      0.076     12.462      0.000
+    IPBHPRP            1.548      0.095     16.275      0.000
+
+ TRACO    WITH
+    ATT                0.000      0.000    999.000    999.000
+    UNIV               0.142      0.018      7.742      0.000
+
+ UNIV     WITH
+    ATT                0.201      0.016     12.523      0.000
+
+ Intercepts
+    IPMODST            3.264      0.027    121.829      0.000
+    IMPTRAD            2.827      0.028     99.877      0.000
+    IPFRULE            3.649      0.028    131.021      0.000
+    IPBHPRP            2.898      0.027    107.469      0.000
+    IPEQOPT            2.107      0.021     98.020      0.000
+    IPUDRST            2.482      0.023    110.192      0.000
+    IMPENV             2.230      0.022    100.189      0.000
+    IMSMETN            2.225      0.017    132.181      0.000
+    IMDFETN            2.631      0.017    154.283      0.000
+    IMPCNTR            2.614      0.018    148.911      0.000
+
+ Variances
+    ATT                0.522      0.020     26.325      0.000
+    UNIV               0.437      0.037     11.728      0.000
+    TRACO              0.399      0.041      9.787      0.000
+
+ Residual Variances
+    IPMODST            1.296      0.043     29.987      0.000
+    IMPTRAD            1.282      0.053     24.208      0.000
+    IPFRULE            1.443      0.048     30.026      0.000
+    IPBHPRP            0.746      0.059     12.611      0.000
+    IPEQOPT            0.666      0.038     17.641      0.000
+    IPUDRST            0.683      0.038     17.858      0.000
+    IMPENV             0.754      0.038     19.673      0.000
+    IMSMETN            0.274      0.011     25.047      0.000
+    IMDFETN            0.086      0.010      8.665      0.000
+    IMPCNTR            0.188      0.012     15.661      0.000
+
+
+STANDARDIZED MODEL RESULTS
+
+
+STDYX Standardization
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+ ATT      BY
+    IMPCNTR            0.857      0.010     85.621      0.000
+    IMDFETN            0.934      0.008    117.264      0.000
+    IMSMETN            0.762      0.011     66.786      0.000
+
+ UNIV     BY
+    IPEQOPT            0.630      0.023     27.048      0.000
+    IPUDRST            0.661      0.023     28.846      0.000
+    IMPENV             0.603      0.025     23.751      0.000
+
+ TRACO    BY
+    IPMODST            0.485      0.023     21.133      0.000
+    IMPTRAD            0.568      0.023     24.778      0.000
+    IPFRULE            0.448      0.024     18.435      0.000
+    IPBHPRP            0.749      0.023     32.625      0.000
+
+ TRACO    WITH
+    ATT                0.000      0.000    999.000    999.000
+    UNIV               0.339      0.032     10.462      0.000
+
+ UNIV     WITH
+    ATT                0.420      0.024     17.778      0.000
+
+ Intercepts
+    IPMODST            2.507      0.033     76.609      0.000
+    IMPTRAD            2.056      0.025     81.768      0.000
+    IPFRULE            2.716      0.039     69.168      0.000
+    IPBHPRP            2.221      0.029     77.737      0.000
+    IPEQOPT            2.006      0.029     68.649      0.000
+    IPUDRST            2.253      0.032     71.174      0.000
+    IMPENV             2.049      0.028     71.978      0.000
+    IMSMETN            2.756      0.038     72.438      0.000
+    IMDFETN            3.205      0.049     65.764      0.000
+    IMPCNTR            3.103      0.046     67.625      0.000
+
+ Variances
+    ATT                1.000      0.000    999.000    999.000
+    UNIV               1.000      0.000    999.000    999.000
+    TRACO              1.000      0.000    999.000    999.000
+
+ Residual Variances
+    IPMODST            0.765      0.022     34.356      0.000
+    IMPTRAD            0.678      0.026     26.045      0.000
+    IPFRULE            0.800      0.022     36.792      0.000
+    IPBHPRP            0.439      0.034     12.740      0.000
+    IPEQOPT            0.604      0.029     20.600      0.000
+    IPUDRST            0.563      0.030     18.548      0.000
+    IMPENV             0.637      0.031     20.807      0.000
+    IMSMETN            0.420      0.017     24.139      0.000
+    IMDFETN            0.128      0.015      8.573      0.000
+    IMPCNTR            0.265      0.017     15.439      0.000
+
+
+R-SQUARE
+
+    Observed                                        Two-Tailed
+    Variable        Estimate       S.E.  Est./S.E.    P-Value
+
+    IPMODST            0.235      0.022     10.566      0.000
+    IMPTRAD            0.322      0.026     12.389      0.000
+    IPFRULE            0.200      0.022      9.218      0.000
+    IPBHPRP            0.561      0.034     16.312      0.000
+    IPEQOPT            0.396      0.029     13.524      0.000
+    IPUDRST            0.437      0.030     14.423      0.000
+    IMPENV             0.363      0.031     11.875      0.000
+    IMSMETN            0.580      0.017     33.393      0.000
+    IMDFETN            0.872      0.015     58.632      0.000
+    IMPCNTR            0.735      0.017     42.810      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.185E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+RESIDUAL OUTPUT
+
+
+     ESTIMATED MODEL AND RESIDUALS (OBSERVED - ESTIMATED)
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1         3.264         2.827         3.649         2.898         2.107
+
+
+           Model Estimated Means/Intercepts/Thresholds
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+      1         2.482         2.230         2.225         2.631         2.614
+
+
+           Residuals for Means/Intercepts/Thresholds
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1         0.000         0.000        -0.001        -0.001         0.000
+
+
+           Residuals for Means/Intercepts/Thresholds
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+      1        -0.001         0.000         0.000         0.000         0.000
+
+
+           Standardized Residuals (z-scores) for Means/Intercepts/Thresholds
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1         0.407       999.000       999.000       999.000        -0.100
+
+
+           Standardized Residuals (z-scores) for Means/Intercepts/Thresholds
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+      1       999.000       999.000       999.000       999.000       999.000
+
+
+           Normalized Residuals for Means/Intercepts/Thresholds
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1         0.011        -0.006        -0.041        -0.032        -0.002
+
+
+           Normalized Residuals for Means/Intercepts/Thresholds
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+      1        -0.026         0.009        -0.011        -0.025        -0.026
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        1.695
+ IMPTRAD        0.493         1.892
+ IPFRULE        0.380         0.469         1.804
+ IPBHPRP        0.617         0.763         0.588         1.702
+ IPEQOPT        0.142         0.175         0.135         0.219         1.103
+ IPUDRST        0.156         0.193         0.149         0.242         0.482
+ IMPENV         0.141         0.174         0.134         0.218         0.434
+ IMSMETN        0.000         0.000         0.000         0.000         0.171
+ IMDFETN        0.000         0.000         0.000         0.000         0.213
+ IMPCNTR        0.000         0.000         0.000         0.000         0.201
+
+
+           Model Estimated Covariances/Correlations/Residual Correlations
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST        1.214
+ IMPENV         0.478         1.185
+ IMSMETN        0.188         0.170         0.652
+ IMDFETN        0.235         0.211         0.472         0.674
+ IMPCNTR        0.221         0.199         0.444         0.554         0.710
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        0.001
+ IMPTRAD       -0.043         0.000
+ IPFRULE       -0.071         0.050         0.000
+ IPBHPRP        0.015        -0.010         0.023        -0.001
+ IPEQOPT        0.058        -0.099        -0.132        -0.117        -0.020
+ IPUDRST        0.084        -0.084        -0.156        -0.151        -0.009
+ IMPENV         0.092         0.135        -0.118         0.014        -0.033
+ IMSMETN       -0.040        -0.110        -0.207        -0.111        -0.018
+ IMDFETN       -0.055        -0.168        -0.200        -0.184        -0.023
+ IMPCNTR       -0.013        -0.148        -0.226        -0.182         0.007
+
+
+           Residuals for Covariances/Correlations/Residual Correlations
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST       -0.024
+ IMPENV        -0.024        -0.019
+ IMSMETN       -0.015        -0.017        -0.001
+ IMDFETN       -0.040        -0.072         0.001        -0.001
+ IMPCNTR       -0.008        -0.034        -0.006        -0.001        -0.001
+
+
+           Standardized Residuals (z-scores) for Covariances/Correlations/Residual Corr
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        0.450
+ IMPTRAD       -2.119         0.206
+ IPFRULE       -2.485         2.534       999.000
+ IPBHPRP        2.418        -0.857         5.690       999.000
+ IPEQOPT        2.441        -4.426        -5.081        -5.990       999.000
+ IPUDRST        3.247        -3.258        -5.391        -6.768       999.000
+ IMPENV         3.772         5.302        -4.291         0.753       999.000
+ IMSMETN       -1.783        -4.406        -8.606        -4.711        -1.335
+ IMDFETN       -2.375        -6.516        -8.443        -7.733        -2.595
+ IMPCNTR       -0.531        -5.609        -9.109        -7.367         0.717
+
+
+           Standardized Residuals (z-scores) for Covariances/Correlations/Residual Corr
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST      999.000
+ IMPENV       999.000       999.000
+ IMSMETN       -1.128        -1.171       999.000
+ IMDFETN       -4.451        -6.848       999.000       999.000
+ IMPCNTR       -0.754        -2.895        -2.113       999.000       999.000
+
+
+           Normalized Residuals for Covariances/Correlations/Residual Correlations
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        0.017
+ IMPTRAD       -1.102         0.006
+ IPFRULE       -1.792         1.211        -0.002
+ IPBHPRP        0.393        -0.232         0.578        -0.031
+ IPEQOPT        1.939        -3.232        -4.370        -3.909        -0.530
+ IPUDRST        2.586        -2.469        -4.702        -4.606        -0.339
+ IMPENV         2.898         3.882        -3.645         0.438        -1.235
+ IMSMETN       -1.783        -4.406        -8.606        -4.711        -0.932
+ IMDFETN       -2.375        -6.516        -8.443        -7.733        -1.229
+ IMPCNTR       -0.531        -5.609        -9.109        -7.367         0.386
+
+
+           Normalized Residuals for Covariances/Correlations/Residual Correlations
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST       -0.677
+ IMPENV        -0.809        -0.495
+ IMSMETN       -0.761        -0.853        -0.030
+ IMDFETN       -2.084        -3.711         0.078        -0.059
+ IMPCNTR       -0.415        -1.695        -0.391        -0.039        -0.048
+
+
+TECHNICAL 1 OUTPUT
+
+
+     PARAMETER SPECIFICATION
+
+
+           NU
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1           1             2             3             4             5
+
+
+           NU
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+      1           6             7             8             9            10
+
+
+           LAMBDA
+              ATT           UNIV          TRACO
+              ________      ________      ________
+ IPMODST            0             0             0
+ IMPTRAD            0             0            11
+ IPFRULE            0             0            12
+ IPBHPRP            0             0            13
+ IPEQOPT            0             0             0
+ IPUDRST            0            14             0
+ IMPENV             0            15             0
+ IMSMETN           16             0             0
+ IMDFETN           17             0             0
+ IMPCNTR            0             0             0
+
+
+           THETA
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST           18
+ IMPTRAD            0            19
+ IPFRULE            0             0            20
+ IPBHPRP            0             0             0            21
+ IPEQOPT            0             0             0             0            22
+ IPUDRST            0             0             0             0             0
+ IMPENV             0             0             0             0             0
+ IMSMETN            0             0             0             0             0
+ IMDFETN            0             0             0             0             0
+ IMPCNTR            0             0             0             0             0
+
+
+           THETA
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST           23
+ IMPENV             0            24
+ IMSMETN            0             0            25
+ IMDFETN            0             0             0            26
+ IMPCNTR            0             0             0             0            27
+
+
+           ALPHA
+              ATT           UNIV          TRACO
+              ________      ________      ________
+      1           0             0             0
+
+
+           BETA
+              ATT           UNIV          TRACO
+              ________      ________      ________
+ ATT                0             0             0
+ UNIV               0             0             0
+ TRACO              0             0             0
+
+
+           PSI
+              ATT           UNIV          TRACO
+              ________      ________      ________
+ ATT               28
+ UNIV              29            30
+ TRACO              0            31            32
+
+
+     STARTING VALUES
+
+
+           NU
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+      1         3.263         2.824         3.647         2.892         2.102
+
+
+           NU
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+      1         2.479         2.228         2.222         2.627         2.611
+
+
+           LAMBDA
+              ATT           UNIV          TRACO
+              ________      ________      ________
+ IPMODST        0.000         0.000         1.000
+ IMPTRAD        0.000         0.000         1.224
+ IPFRULE        0.000         0.000         1.002
+ IPBHPRP        0.000         0.000         1.757
+ IPEQOPT        0.000         1.000         0.000
+ IPUDRST        0.000         1.134         0.000
+ IMPENV         0.000         0.962         0.000
+ IMSMETN        0.855         0.000         0.000
+ IMDFETN        1.080         0.000         0.000
+ IMPCNTR        1.000         0.000         0.000
+
+
+           THETA
+              IPMODST       IMPTRAD       IPFRULE       IPBHPRP       IPEQOPT
+              ________      ________      ________      ________      ________
+ IPMODST        0.848
+ IMPTRAD        0.000         0.945
+ IPFRULE        0.000         0.000         0.901
+ IPBHPRP        0.000         0.000         0.000         0.850
+ IPEQOPT        0.000         0.000         0.000         0.000         0.540
+ IPUDRST        0.000         0.000         0.000         0.000         0.000
+ IMPENV         0.000         0.000         0.000         0.000         0.000
+ IMSMETN        0.000         0.000         0.000         0.000         0.000
+ IMDFETN        0.000         0.000         0.000         0.000         0.000
+ IMPCNTR        0.000         0.000         0.000         0.000         0.000
+
+
+           THETA
+              IPUDRST       IMPENV        IMSMETN       IMDFETN       IMPCNTR
+              ________      ________      ________      ________      ________
+ IPUDRST        0.595
+ IMPENV         0.000         0.582
+ IMSMETN        0.000         0.000         0.325
+ IMDFETN        0.000         0.000         0.000         0.337
+ IMPCNTR        0.000         0.000         0.000         0.000         0.354
+
+
+           ALPHA
+              ATT           UNIV          TRACO
+              ________      ________      ________
+      1         0.000         0.000         0.000
+
+
+           BETA
+              ATT           UNIV          TRACO
+              ________      ________      ________
+ ATT            0.000         0.000         0.000
+ UNIV           0.000         0.000         0.000
+ TRACO          0.000         0.000         0.000
+
+
+           PSI
+              ATT           UNIV          TRACO
+              ________      ________      ________
+ ATT            0.050
+ UNIV           0.000         0.050
+ TRACO          0.000         0.000         0.050
+
+
+     Beginning Time:  16:51:06
+        Ending Time:  16:51:06
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2012 Muthen & Muthen

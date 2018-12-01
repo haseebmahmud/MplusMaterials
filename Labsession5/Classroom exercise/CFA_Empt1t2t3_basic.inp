@@ -1,0 +1,59 @@
+Title: Crimoc-Datensatz (t1-t4, 2002-2005)
+       CFA: Empathie, Bestrafung und Misshandlung (t1,t2,t3)
+       Basismodell, Tabelle 7.10 in Kapitel 7
+       Sch�tzer: ML
+
+Data:
+  File is panel7_10.dat ;
+  Listwise = on ;
+
+Variable:
+  Names are
+     al0618 al0619 al0620 al0053 al0054 al0055 al0076 al0070 al0071 al0077
+     al0078 al0087 al0093 al0061 al0083 al0085 ae0001 ae0003 ae0004 ae0006
+     ae0008 ae0011 ae0012 ae0013 ae0020 ae0021 ae0022 ae0010 ae0033 ae0034
+     ae0031 ae0032 at0720 at0721 at0722 at0723 at0724 at0725 at0726 at0727
+     at0728 at0729 bl0618 bl0619 bl0620 bl0053 bl0054 bl0055 bl0076 bl0070
+     bl0071 bl0077 bl0078 bl0087 bl0093 bl0061 bl0083 bl0085 be0001 be0003
+     be0004 be0006 be0008 be0011 be0012 be0013 be0020 be0021 be0022 be0010
+     be0033 be0034 be0031 be0032 bt0720 bt0721 bt0722 bt0723 bt0724 bt0725
+     bt0726 bt0727 bt0728 bt0729 cl0618 cl0619 cl0620 cl0053 cl0054 cl0055
+     cl0076 cl0070 cl0071 cl0077 cl0078 cl0087 cl0093 cl0061 cl0083 cl0085
+     ce0001 ce0003 ce0004 ce0006 ce0008 ce0011 ce0012 ce0013 ce0020 ce0021
+     ce0022 ce0010 ce0033 ce0034 ce0031 ce0032 ct0720 ct0721 ct0722 ct0723
+     ct0724 ct0725 ct0726 ct0727 ct0728 ct0729 dl0618 dl0619 dl0620 dl0053
+     dl0054 dl0055 dl0076 dl0070 dl0071 dl0077 dl0078 dl0087 dl0093 dl0061
+     dl0083 dl0085 de0001 de0003 de0004 de0006 de0008 de0011 de0012 de0013
+     de0020 de0021 de0022 de0010 de0033 de0034 de0031 de0032 dt0720 dt0721
+     dt0722 dt0723 dt0724 dt0725 dt0726 dt0727 dt0728 dt0729 aa0011 aschulf
+     apraev ainz ba0011 bschulf bpraev binz ca0011 cschulf cpraev cinz
+     da0011 dschulf dpraev dinz;
+  Missing are all (-9999) ;
+  Usevariables are ae0004 ae0006 ae0008 be0004 be0006 be0008 ce0004 ce0006 ce0008 ;
+
+Analysis:
+  Model = nomeanstructure ;
+  Information = expected ;
+  Estimator = ML ;
+
+Model:
+
+! Factor loadings equal
+
+          Emp1 by ae0004;
+          Emp1 by ae0006 (l1);
+          Emp1 by ae0008 (l2);
+          Emp2 by be0004;
+          Emp2 by be0006 (l1);
+          Emp2 by be0008 (l2);
+          Emp3 by ce0004;
+          Emp3 by ce0006 (l1);
+          Emp3 by ce0008 (l2);
+
+! Equal variances of factors
+
+          Emp1 Emp2 Emp3 (v) ;
+
+
+
+Output: Sampstat Residual Stdyx Modindices Tech1 Tech4;

@@ -1,0 +1,24 @@
+Title: Measurement Equivalence of Nationalism and
+          Constructive Patriotism in the ISSP: 34 Countries  
+          Configural Invariance 
+
+Data: 
+    file = issp.txt;
+    listwise = on; 
+
+Variable:
+    Names = cn v21 v22 v26 v29 v35;
+    Usevariables  = v21 v22 v26 v29 v35;
+    Missing = v21 v22 v26 v29 v35 (0 8 9);
+    Grouping = cn(34);
+
+Analysis:
+    Estimator = ml;
+    Model = configural ;
+     
+Model:
+    nat by v21 v22;
+    cp by v26 v29 v35;
+    
+Output:
+    Sampstat Stdyx Residual Tech1 Tech4 ;

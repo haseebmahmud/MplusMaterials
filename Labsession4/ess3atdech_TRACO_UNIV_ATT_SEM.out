@@ -1,0 +1,46 @@
+Mplus VERSION 7 (Mac)
+MUTHEN & MUTHEN
+08/13/2015   3:38 PM
+
+INPUT INSTRUCTIONS
+
+  Title: labsession4. excercise 4.1
+
+  Data: File is ess3atdech_TRACO_UNIV_ATT_SEM.dat;
+  listwise = on;
+  variable:   names are ipmodst imptrad ipfrule ipbhprp ipeqopt ipudrst
+              impenv imsmetn imdfetn impcntr  gndr yrbrn eduyrs cntry;
+
+              missing =  ipmodst imptrad ipfrule ipbhprp ipeqopt ipudrst impenv (7-9)
+              imsmetn imdfetn impcntr (6-9) gndr yrbrn (6666 - 9999) eduyrs (66-99) cntry;
+
+              usevariables = ipmodst imptrad ipfrule ipbhprp;
+
+              GROUPING IS CNTRY (1=AT 2=DE 3=CH);
+
+
+  analysis:   MODEL=NOMEANSTRUCTURE;
+              INFORMATION=EXPECTED;
+
+  model:      TRACO BY ipmodst;
+              TRACO BY imptrad;
+              TRACO BY ipfrule;
+              TRACO BY ipbhprp;
+
+  OUTPUT: sampstat residual stdyx tech1;
+
+*** ERROR
+  Invalid symbol in data file:
+  "AT" at record #: 2, field #: 14
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2012 Muthen & Muthen

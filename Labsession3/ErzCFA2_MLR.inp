@@ -1,0 +1,28 @@
+TITLE: Educational Styles (20 Items)
+       Confirmatory Factor Model 
+       (Empathy and Punishment) 
+
+DATA:     FILE is Erz.dat ;
+          TYPE is INDIVIDUAL ;
+          FORMAT is FREE ;
+          NOBSERVATIONS are 1769 ;
+          LISTWISE = ON ;
+
+VARIABLE: NAMES are
+          ae0001 ae0004 ae0012 ae0008 ae0017 ae0010 ae0011
+          ae0006 ae0022 ae0034 ae0020 ae0021 ae0030 ae0023
+          ae0003 ae0013 ae0018 ae0031 ae0032 ae0033 ;
+          USEVARIABLES are
+          ae0004 ae0006 ae0008 
+          ae0011 ae0012 ae0013; 
+          MISSING are ALL (9) ;
+
+ANALYSIS: MODEL = NOMEANSTRUCTURE ;
+          INFORMATION = EXPECTED ;
+          ESTIMATOR = MLR ; 
+
+MODEL: 
+       EMP BY ae0004 ae0006 ae0008 ; 
+       PUN BY ae0011 ae0012 ae0013 ;
+       
+OUTPUT: SAMPSTAT RESIDUAL STDYX TECH1 TECH4 ;

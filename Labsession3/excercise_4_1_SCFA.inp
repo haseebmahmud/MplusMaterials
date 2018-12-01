@@ -1,0 +1,41 @@
+Title: Simultenous CFA
+
+Data: FILE is ess3at_TRACO_UNIV_ATT.dat;
+!listwise=on;
+
+Variable: Names are ipmodst imptrad ipfrule ipbhprp 
+ipeqopt ipudrst impenv imsmetn imdfetn impcntr;
+
+usevariables are ALL;
+
+missing = ipmodst imptrad ipfrule ipbhprp ipeqopt 
+ipudrst impenv(7-9) imsmetn imdfetn impcntr (6-9);
+
+analysis: 	!Model = nomeanstructure;
+			!information = expected;
+			estimator = mlr;
+
+model: 		ATT BY impcntr;
+			ATT BY imdfetn;
+			ATT BY imsmetn;
+
+			UNIV BY ipeqopt;
+			UNIV BY ipudrst;
+			UNIV BY impenv;
+
+			TRACO BY ipmodst;
+			TRACO BY imptrad;
+			TRACO BY ipfrule;
+			TRACO BY ipbhprp;
+
+			!ATT WITH UNIV;
+			!UNIV WITH ATT;
+			!TRACO WITH ATT;
+
+       		!ATT WITH UNIV@1.0;
+       		!UNIV WITH ATT@1.0;
+       		!TRACO WITH ATT@1.0;
+       		TRACO WITH ATT@0.0;
+
+
+output: sampstat residual Stdyx Tech1;

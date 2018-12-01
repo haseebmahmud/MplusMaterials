@@ -1,0 +1,222 @@
+Mplus VERSION 7 (Mac)
+MUTHEN & MUTHEN
+08/13/2015   9:45 AM
+
+INPUT INSTRUCTIONS
+
+  TITLE:			this is an example of a multiple group CFA
+  				with covariates (MIMIC) with continuous
+  				factor indicators
+
+  DATA:			FILE IS ex5.14.dat;
+
+  VARIABLE:		NAMES ARE y1-y6 x1-x3 g;
+  				GROUPING IS g (1=male 2=female);
+
+  ANALYSIS:		MODEL = NOMEANSTRUCTURE;
+  				INFORMATION = EXPECTED;
+
+  MODEL:			f1 BY y1-y3;
+  				f2 BY y4-y6;
+  !				f1 f2 ON x1-x3;
+
+  MODEL female: 	f1 BY y3;
+
+
+
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  X1
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  X2
+*** WARNING in MODEL command
+  Variable is uncorrelated with all other variables:  X3
+*** WARNING in MODEL command
+  At least one variable is uncorrelated with all other variables in the model.
+  Check that this is what is intended.
+   4 WARNING(S) FOUND IN THE INPUT INSTRUCTIONS
+
+
+
+this is an example of a multiple group CFA
+with covariates (MIMIC) with continuous
+factor indicators
+
+SUMMARY OF ANALYSIS
+
+Number of groups                                                 2
+Number of observations
+   Group MALE                                                  500
+   Group FEMALE                                                600
+
+Number of dependent variables                                    9
+Number of independent variables                                  0
+Number of continuous latent variables                            2
+
+Observed dependent variables
+
+  Continuous
+   Y1          Y2          Y3          Y4          Y5          Y6
+   X1          X2          X3
+
+Continuous latent variables
+   F1          F2
+
+Variables with special functions
+
+  Grouping variable     G
+
+Estimator                                                       ML
+Information matrix                                        EXPECTED
+Maximum number of iterations                                  1000
+Convergence criterion                                    0.500D-04
+Maximum number of steepest descent iterations                   20
+
+Input data file(s)
+  ex5.14.dat
+
+Input data format  FREE
+
+
+
+THE MODEL ESTIMATION TERMINATED NORMALLY
+
+
+
+MODEL FIT INFORMATION
+
+Number of Free Parameters                       29
+
+Loglikelihood
+
+          H0 Value                      -15481.233
+          H1 Value                      -14519.470
+
+Information Criteria
+
+          Akaike (AIC)                   31020.467
+          Bayesian (BIC)                 31165.555
+          Sample-Size Adjusted BIC       31073.445
+            (n* = (n + 2) / 24)
+
+Chi-Square Test of Model Fit
+
+          Value                           1923.526
+          Degrees of Freedom                    61
+          P-Value                           0.0000
+
+Chi-Square Contributions From Each Group
+
+          MALE                             903.361
+          FEMALE                          1020.165
+
+RMSEA (Root Mean Square Error Of Approximation)
+
+          Estimate                           0.236
+          90 Percent C.I.                    0.227  0.245
+          Probability RMSEA <= .05           0.000
+
+CFI/TLI
+
+          CFI                                0.785
+          TLI                                0.747
+
+Chi-Square Test of Model Fit for the Baseline Model
+
+          Value                           8745.773
+          Degrees of Freedom                    72
+          P-Value                           0.0000
+
+SRMR (Standardized Root Mean Square Residual)
+
+          Value                              0.299
+
+
+
+MODEL RESULTS
+
+                                                    Two-Tailed
+                    Estimate       S.E.  Est./S.E.    P-Value
+
+Group MALE
+
+ F1       BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 1.013      0.021     49.033      0.000
+    Y3                 1.014      0.027     37.562      0.000
+
+ F2       BY
+    Y4                 1.000      0.000    999.000    999.000
+    Y5                 1.003      0.018     55.454      0.000
+    Y6                 1.004      0.019     53.814      0.000
+
+ F2       WITH
+    F1                 2.304      0.174     13.234      0.000
+
+ Variances
+    X1                 2.921      0.185     15.811      0.000
+    X2                 2.082      0.132     15.811      0.000
+    X3                 1.042      0.066     15.811      0.000
+    F1                 2.748      0.199     13.801      0.000
+    F2                 2.933      0.207     14.194      0.000
+
+ Residual Variances
+    Y1                 0.533      0.048     11.148      0.000
+    Y2                 0.515      0.048     10.839      0.000
+    Y3                 0.472      0.046     10.259      0.000
+    Y4                 0.542      0.048     11.384      0.000
+    Y5                 0.381      0.040      9.501      0.000
+    Y6                 0.543      0.048     11.364      0.000
+
+Group FEMALE
+
+ F1       BY
+    Y1                 1.000      0.000    999.000    999.000
+    Y2                 1.013      0.021     49.033      0.000
+    Y3                 0.480      0.020     24.560      0.000
+
+ F2       BY
+    Y4                 1.000      0.000    999.000    999.000
+    Y5                 1.003      0.018     55.454      0.000
+    Y6                 1.004      0.019     53.814      0.000
+
+ F2       WITH
+    F1                 2.496      0.172     14.553      0.000
+
+ Variances
+    X1                 2.989      0.173     17.321      0.000
+    X2                 2.144      0.124     17.321      0.000
+    X3                 1.123      0.065     17.321      0.000
+    F1                 2.667      0.177     15.068      0.000
+    F2                 3.458      0.224     15.411      0.000
+
+ Residual Variances
+    Y1                 0.482      0.049      9.861      0.000
+    Y2                 0.517      0.051     10.142      0.000
+    Y3                 0.465      0.030     15.630      0.000
+    Y4                 0.618      0.049     12.550      0.000
+    Y5                 0.493      0.044     11.263      0.000
+    Y6                 0.503      0.044     11.352      0.000
+
+
+QUALITY OF NUMERICAL RESULTS
+
+     Condition Number for the Information Matrix              0.261E-02
+       (ratio of smallest to largest eigenvalue)
+
+
+     Beginning Time:  09:45:44
+        Ending Time:  09:45:44
+       Elapsed Time:  00:00:00
+
+
+
+MUTHEN & MUTHEN
+3463 Stoner Ave.
+Los Angeles, CA  90066
+
+Tel: (310) 391-9971
+Fax: (310) 391-8971
+Web: www.StatModel.com
+Support: Support@StatModel.com
+
+Copyright (c) 1998-2012 Muthen & Muthen

@@ -1,0 +1,22 @@
+title: Read data <filename>.dat into Mplus
+Check for correct data input
+
+data: FILE = ess3at.dat;
+! Same directory data and input file
+! I am not 
+!listwise = on ;
+
+
+variable: names = ipmodst imptrad ipfrule ipbhprp ipeqopt ipudrst 
+impenv imsmetn imdfetn impcntr;
+! Defining missing value
+missing = ipmodst imptrad ipfrule ipbhprp ipeqopt 
+ipudrst impenv(7-9) imsmetn imdfetn impcntr (6-9);
+! only 90 characters are possible
+categorical = imsmetn imdfetn impcntr;
+analysis: type = basic;
+
+model:
+
+output: Sampstat;
+
